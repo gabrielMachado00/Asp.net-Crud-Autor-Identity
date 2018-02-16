@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Autores.Domain.Entities.Total>
+
+@{
+    ViewBag.Title = "ListaTotal";
+}
+
+<h2>ListaTotal</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalLivros)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalAutores)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalLivros)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalAutores)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
